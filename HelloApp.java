@@ -1,24 +1,30 @@
 /**
- * HelloApp.java - A simple Java application that displays "Hello, World!" to the console.
+ * HelloApp.java - A simple Java application that displays greetings.
  * 
- * This is the first step in the HelloApp journey, where we start with a basic "Hello, World!"
- * program. The application consists of a single class with a main method that serves as the
- * entry point for the program. The main method uses the System.out.println() function to print
- * the message "Hello, World!" to the console. This application demonstrates fundamental Java
- * concepts such as class declaration, the main method, and standard output.
- * 
+ * UC 1: Display "Hello World" - The application displays "Hello World" to the console when executed.
+ * UC 2: Display User Name - The application accepts a user's name as a command-line argument 
+ * and displays a personalized greeting.
+ *
  * Key Java Concepts Used:
  * 1. Class Declaration - Defines a blueprint for objects
  * 2. Main Method - Entry point for program execution
  * 3. Static Keyword - Method belongs to the class, not instances
  * 4. String Argument Array - Command-line arguments parameter
  * 5. System.out.println() - Standard output stream for printing
+ * 6. Command-line Arguments: Accessing user input via args[] parameter
+ * 7. String Concatenation: Combining strings using the + operator
  * 
  * @author Siddhanth
  * @version 1.0
  */
 public class HelloApp {
-public static void main(String[] args) {
-System.out.println("Hello, World!");
-}
+    public static void main(String[] args) {
+        if (args.length > 0) {
+            // Get the name from command-line argument
+            String name = args[0];
+            System.out.println("Hello, " + name + "!");
+        } else {
+            System.out.println("Hello, World!");
+        }
+    }
 }
