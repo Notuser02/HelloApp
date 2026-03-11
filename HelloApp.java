@@ -1,4 +1,4 @@
-/**
+/** UC3
  * HelloApp.java - A simple Java application that displays greetings.
  * 
  * UC 1: Display "Hello World" - The application displays "Hello World" to the console when executed.
@@ -19,12 +19,7 @@
  */
 public class HelloApp {
     public static void main(String[] args) {
-        if (args.length > 0) {
-            // Get the name from command-line argument
-            String name = args[0];
-            System.out.println("Hello, " + name + "!");
-        } else {
-            System.out.println("Hello, World!");
-        }
+        String name = (args.length > 0) ? args[0] : "World";
+        System.out.println("Hello, " + name + "!");
     }
 }
