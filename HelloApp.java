@@ -1,25 +1,41 @@
-/** UC3
- * HelloApp.java - A simple Java application that displays greetings.
- * 
- * UC 1: Display "Hello World" - The application displays "Hello World" to the console when executed.
- * UC 2: Display User Name - The application accepts a user's name as a command-line argument 
- * and displays a personalized greeting.
- *
- * Key Java Concepts Used:
- * 1. Class Declaration - Defines a blueprint for objects
- * 2. Main Method - Entry point for program execution
- * 3. Static Keyword - Method belongs to the class, not instances
- * 4. String Argument Array - Command-line arguments parameter
- * 5. System.out.println() - Standard output stream for printing
- * 6. Command-line Arguments: Accessing user input via args[] parameter
- * 7. String Concatenation: Combining strings using the + operator
- * 
- * @author Siddhanth
- * @version 1.0
- */
+/**-
+/**
+* HelloApp UC4 A simple Java application that greets multiple users by name if provided as command-line arguments, or defaults to greeting "World" if no names are given.
+* Greet Multiple Users The application should accept multiple names as command-line
+* argumentsand display a personalized greeting for each user.
+* Usage: java HelloAppUC4 [name1] [name2] [nameN] ...
+* If names are provided, it will display "Hello, [Name1], [Name2], ...!" to the console.
+* If no names are provided, it will display "Hello, World!"
+* @author Siddhanth
+* @version 4.0
+* @since UC1
+*/
+// Key Concepts for HelloAppUC4:
+// 1. Default Values: Providing a fallback value when no input is given
+// 2. Command-line Arguments: Accessing user input via args[] parameter
+// 3. Conditional Statements: Using if to check conditions
+// 4. Boolean Logic: Using logical conditions to control flow
+//5. Array Length: Checking the number of command-line arguments
+// 6. StringBuilder: Efficiently building a string from multiple parts
+// 7. Looping Constructs: Using for loops to iterate through command-line arguments
+// 8. String Concatenation: Joining multiple strings with a delimiter (comma and space)
+// Code Snippet for HelloApp UC4:
+// StringBuilder nameBuilder = new StringBuilder();
+// for (int i = 0 i < args.length; i++) {
+//     nameBuilder.append(args[i]);
+//     if (i < args.length - 1) {   
+//         nameBuilder.append(", ");
+//     }
+// }
 public class HelloApp {
     public static void main(String[] args) {
-        String name = (args.length > 0) ? args[0] : "World";
-        System.out.println("Hello, " + name + "!");
+        String names;
+
+        if (args.length > 0) {
+            names = String.join(", ", args);
+        } else {
+            names = "World";
+        }
+        System.out.println("Hello, " + names + "!");
     }
 }
